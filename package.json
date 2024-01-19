@@ -1,0 +1,27 @@
+{
+  "name": "employee-management",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/datatables.net": "^1.10.28",
+    "@types/daterangepicker": "^3.1.8",
+    "@types/dropzone": "^5.7.8",
+    "@types/jquery": "^3.5.29",
+    "@types/select2": "^4.0.63",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "datatables.net-jqui": "^1.13.8",
+    "daterangepicker": "^3.1.0",
+    "dropzone": "^6.0.0-beta.2",
+    "jquery": "^3.7.1",
+    "select2": "^4.1.0-rc.0"
+  }
+}
