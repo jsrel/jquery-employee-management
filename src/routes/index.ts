@@ -1,17 +1,19 @@
 import { Router } from "./router";
 import { addRoute, navigate } from "./routerUtils";
-import { HomeView, DashboardView, AuthView } from "./view";
+import { HomePage, AuthPage, DocsPage, DashboardPage } from "./views";
 
 const rootElement = document.getElementById("app") || document.body;
 const router = new Router(rootElement);
 
-const homeView = new HomeView();
-const dashboardView = new DashboardView();
-const authView = new AuthView();
+const homePage = new HomePage();
+const authPage = new AuthPage();
+const docsPage = new DocsPage();
+const dashboardPage = new DashboardPage();
 
-addRoute(router, "/", homeView);
-addRoute(router, "/about", dashboardView);
-addRoute(router, "/authentications", authView);
+addRoute(router, "/", homePage);
+addRoute(router, "/authentications", authPage);
+addRoute(router, "/documentations", docsPage);
+addRoute(router, "/dashboard", dashboardPage);
 
 document.addEventListener("DOMContentLoaded", () => {
   navigateToCurrentRoute(router);

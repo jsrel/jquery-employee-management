@@ -1,4 +1,4 @@
-import { ErrorView } from "./view";
+import { ErrorPage } from "./views";
 
 type Route = {
   path: string;
@@ -37,9 +37,9 @@ export class Router {
   }
 
   private clientError(): void {
-    const errorView = new ErrorView();
+    const errorPage = new ErrorPage();
     
     document.body.innerHTML = "";
-    document.body.appendChild(errorView);
+    document.body.appendChild(errorPage);
   }
 }
