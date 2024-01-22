@@ -15,7 +15,8 @@
     "@types/jquery": "^3.5.29",
     "@types/select2": "^4.0.63",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vitest": "^1.2.1"
   },
   "dependencies": {
     "datatables.net-jqui": "^1.13.8",
