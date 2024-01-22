@@ -1,0 +1,8 @@
+.user-auth {
+  width: 100vw;
+}
+
+.user-auth .user-auth__menu {
+  display: flex;
+  flex-direction: column;
+}

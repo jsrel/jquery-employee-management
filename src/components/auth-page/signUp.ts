@@ -1,5 +1,9 @@
-import * as $ from 'jquery';
-import { validateUsername, validateEmail, validatePassword } from './validation';
+import * as $ from "jquery";
+import {
+  validateUsername,
+  validateEmail,
+  validatePassword,
+} from "./validation";
 
 class SignUp extends HTMLElement {
   connectedCallback() {
@@ -9,19 +13,32 @@ class SignUp extends HTMLElement {
 
   private render() {
     this.innerHTML = `
-      <form id="signUpForm">
+      <form id="signUp" name="signUp">
         <label for="username">Username:</label>
-        <input type="text" id="username" required pattern="[a-zA-Z]+" title="Only letters are allowed">
+        <input
+          id="username"
+          type="text"
+          pattern="[a-zA-Z]+"
+          title="Only letters are allowed"
+          autocomplete="on"
+          required 
+        >
 
         <label for="email">Email:</label>
-        <input type="email" id="email" required>
+        <input
+          id="email"
+          type="email"
+          autocomplete="on"
+          required
+        >
 
         <label for="password">Password:</label>
-        <input 
-          type="password" 
-          id="password" required 
+        <input
+          id="password"
+          type="password"
           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$"
           title="Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least 8 characters long"
+          required
         >
 
         <button type="button" id="signupButton">Sign Up</button>
@@ -31,7 +48,6 @@ class SignUp extends HTMLElement {
 
   private setupEvents() {
     $("#signupButton").on("click", () => this.signUp());
-    $("#showSignInButton").on("click", () => this.dispatchEvent(new Event('showSignIn')));
   }
 
   private signUp() {
@@ -42,9 +58,6 @@ class SignUp extends HTMLElement {
     if (!this.validateInput(username, email, password)) {
       return alert("Invalid input. Please try again.");
     }
-
-    // Call a function to handle sign-up logic
-    this.dispatchEvent(new CustomEvent('performSignUp', { detail: { username, email, password } }));
   }
 
   private validateInput(username: string, email: string, password: string) {

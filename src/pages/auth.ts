@@ -1,6 +1,3 @@
-import { Layout } from "./Layout";
-import "../components/auth-page"
+import "../components/auth-page";
 
-export const Auth = Layout(`
-  <user-auth-page></user-auth-page>
-`);
+export const Auth = `<user-auth-page class="user-auth"></user-auth-page>`;

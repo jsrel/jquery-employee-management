@@ -2,8 +2,7 @@ import { Router } from "./router";
 import { addRoute, navigate } from "./routerUtils";
 import { HomePage, AuthPage, DocsPage, DashboardPage } from "./views";
 
-const rootElement = document.getElementById("app") || document.body;
-const router = new Router(rootElement);
+const router = new Router();
 
 const homePage = new HomePage();
 const authPage = new AuthPage();

@@ -9,16 +9,24 @@ class SignIn extends HTMLElement {
 
   private render() {
     this.innerHTML = `
-      <form id="signInForm">
+      <form id="signIn" name="signIn">
         <label for="username">Username:</label>
-        <input type="text" id="username" required pattern="[a-zA-Z]+" title="Only letters are allowed">
+        <input 
+          id="username"
+          type="text"
+          pattern="[a-zA-Z]+"
+          title="Only letters are allowed"
+          autocomplete="on"
+          required
+        >
 
         <label for="password">Password:</label>
         <input 
-          type="password" 
-          id="password" required 
+          id="password"
+          type="password"
           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$"
           title="Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least 8 characters long"
+          required
         >
 
         <button type="button" id="loginButton">Login</button>
@@ -28,7 +36,6 @@ class SignIn extends HTMLElement {
 
   private setupEvents() {
     $('#loginButton').on('click', () => this.login());
-    $('#showSignUpButton').on('click', () => this.dispatchEvent(new Event('showSignUp')));
   }
 
   private login() {
@@ -38,9 +45,6 @@ class SignIn extends HTMLElement {
     if (!this.validateInput(username, password)) {
       return alert('Invalid input. Please try again');
     }
-
-    // Call a function to handle login logic
-    this.dispatchEvent(new CustomEvent('performLogin', { detail: { username, password } }));
   }
 
   private validateInput(username: string, password: string) {
