@@ -1,6 +1,14 @@
+import './navLogo'
+import './navList'
+import '../ui/hamburgerMenu'
+
 class NavBar extends HTMLElement {
   connectedCallback(){
-    this.innerHTML = '<div>Hello World</div>'
+    this.innerHTML = `
+      <nav-logo></nav-logo>
+      <nav-list></nav-list>
+      <hamburger-menu></hamburger-menu>
+    `
   };
 }
 
