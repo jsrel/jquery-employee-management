@@ -9,33 +9,40 @@ class SignIn extends HTMLElement {
 
   private render() {
     this.innerHTML = `
-      <form id="signIn" name="signIn">
-        <label for="username">Username:</label>
-        <input 
-          id="username"
-          type="text"
-          pattern="[a-zA-Z]+"
-          title="Only letters are allowed"
-          autocomplete="on"
-          required
-        >
+      <form class="form" id="signIn" action="">
+        <div class="input-field">
+          <input
+            required
+            autocomplete="on"
+            type="text"
+            id="username"
+            title="Only letters are allowed"
+          />
+          <label for="username">Username</label>
+        </div>
+        <div class="input-field">
+          <input
+            required
+            autocomplete="off"
+            type="password"
+            id="password"
+          />
+          <label for="password">Password</label>
+        </div>
 
-        <label for="password">Password:</label>
-        <input 
-          id="password"
-          type="password"
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$"
-          title="Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least 8 characters long"
-          required
-        >
-
-        <button type="button" id="loginButton">Login</button>
+        <div class="btn-container">
+          <button class="btn" id="btn__login-btn">Submit</button>
+          <div class="acc-text">
+            New here ?
+            <span style="color : #0000ff; cursor : pointer;">Create Account</span>
+          </div>
+        </div>
       </form>
     `;
   }
 
   private setupEvents() {
-    $('#loginButton').on('click', () => this.login());
+    $('btn__login-btn').on('click', () => this.login());
   }
 
   private login() {

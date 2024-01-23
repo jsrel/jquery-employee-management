@@ -13,41 +13,48 @@ class SignUp extends HTMLElement {
 
   private render() {
     this.innerHTML = `
-      <form id="signUp" name="signUp">
-        <label for="username">Username:</label>
-        <input
-          id="username"
-          type="text"
-          pattern="[a-zA-Z]+"
-          title="Only letters are allowed"
-          autocomplete="on"
-          required 
-        >
+      <form class="form" action="">
+        <div class="input-field">
+          <input
+            id="username"
+            type="text"
+            pattern="[a-zA-Z]+"
+            title="Only letters are allowed"
+            autocomplete="on"
+            required
+          />
+          <label for="username">Username</label>
+        </div>
+        <div class="input-field">
+          <input
+            id="email"
+            type="email"
+            name="email"
+            autocomplete="on"
+            required
+          />
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field">
+          <input
+            id="password"
+            type="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$"
+            title="Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least 8 characters long"
+            required
+          />
+          <label for="username">Password</label>
+        </div>
 
-        <label for="email">Email:</label>
-        <input
-          id="email"
-          type="email"
-          autocomplete="on"
-          required
-        >
-
-        <label for="password">Password:</label>
-        <input
-          id="password"
-          type="password"
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$"
-          title="Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least 8 characters long"
-          required
-        >
-
-        <button type="button" id="signupButton">Sign Up</button>
+        <div class="btn-container">
+          <button type="button" class="btn btn__submit" >Submit</button>
+        </div>
       </form>
     `;
   }
 
   private setupEvents() {
-    $("#signupButton").on("click", () => this.signUp());
+    $("btn__submit").on("click", () => this.signUp());
   }
 
   private signUp() {
