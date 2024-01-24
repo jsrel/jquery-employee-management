@@ -9,15 +9,17 @@ class NavBar extends HTMLElement {
     this.setupEvents();
   }
 
-  render() {
+  private render() {
     this.innerHTML = `
       <company-logo></company-logo>
       <nav-list class="navigation--list"></nav-list>
-      <hamburger-menu class="menu"></hamburger-menu>
+      <button class="menu">
+        <hamburger-menu></hamburger-menu>
+      </button>
     `;
   }
 
-  setupEvents() {
+  private setupEvents() {
     $(".menu").on("click", (event) => {
       event.preventDefault();
       $("nav-list").toggleClass("active");

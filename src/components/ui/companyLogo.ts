@@ -3,7 +3,7 @@ class CompanyLogo extends HTMLElement {
     this.render();
   }
 
-  render() {
+  private render() {
     this.innerHTML = `
       <div>Logo</div>
     `
