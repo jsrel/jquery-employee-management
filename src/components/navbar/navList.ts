@@ -5,7 +5,10 @@ class NavList extends HTMLElement {
 
   private render() {
     this.innerHTML = `
-      <div>NavList</div>
+      <a href="/">Home</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/documentations">Docs</a>
+      <a href="/authentications">Sign In</a>
     `;
   }
 }

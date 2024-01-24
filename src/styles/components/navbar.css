@@ -1,0 +1,13 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation .navigation--list {
+  display: none;
+}
+
+.navigation .navigation--list.active {
+  display: block;
+}

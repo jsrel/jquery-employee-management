@@ -2,7 +2,7 @@ import "../components/navbar";
 import "../components/footer";
 
 export const Layout = (content: string): string => `
-  <navigation-bar></navigation-bar>
+  <nav><navigation-bar class="navigation"></navigation-bar></nav>
   ${content}
-  <footer-bar></footer-bar>
+  <footer><footer-bar></footer-bar></footer>
 `;
