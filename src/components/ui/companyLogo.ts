@@ -1,4 +1,4 @@
-class NavLogo extends HTMLElement {
+class CompanyLogo extends HTMLElement {
   connectedCallback() {
     this.render();
   }
@@ -6,8 +6,8 @@ class NavLogo extends HTMLElement {
   render() {
     this.innerHTML = `
       <div>Logo</div>
-    `;
+    `
   }
 }
 
-customElements.define("nav-logo", NavLogo);
+customElements.define('company-logo', CompanyLogo)

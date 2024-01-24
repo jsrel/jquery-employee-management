@@ -1,7 +1,13 @@
-class HamburgerMenu extends  HTMLElement {
+class HamburgerMenu extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = '<div>HamburgerMenu<div>'
-  } 
+    this.innerHTML = `
+      <label class="burger" for="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    `;
+  }
 }
 
-customElements.define('hamburger-menu', HamburgerMenu)
+customElements.define("hamburger-menu", HamburgerMenu);
